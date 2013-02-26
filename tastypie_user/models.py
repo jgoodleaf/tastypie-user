@@ -9,8 +9,8 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import int_to_base36
 
 userclass = get_user_model()
+print "models says User is %s" % User
 
-print userclass
 class MyUser(userclass):
     def send_email(self, action_type, ctx_dict=None, from_email=None):
         ctx_dict = ctx_dict or {}

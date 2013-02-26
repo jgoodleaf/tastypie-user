@@ -1,10 +1,12 @@
 #coding:utf8
 from django.contrib.auth.forms import UserCreationForm as BasicUserForm
 from django.conf import settings
-from tastypie_user.models import User
+#from tastypie_user.models import User
+from django.contrib.auth import get_user_model
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+User = get_user_model()
 
 MIN_PASSWORD_LENGTH = getattr(settings, 'MIN_PASSWORD_LENGTH', 6)
 

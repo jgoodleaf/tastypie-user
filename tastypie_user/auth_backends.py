@@ -4,7 +4,10 @@ auth backends allowed us to use auth.authenticate.
 taspiepie apikey & email authenticate support.
 """
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class ApiKeyBackend(ModelBackend):
