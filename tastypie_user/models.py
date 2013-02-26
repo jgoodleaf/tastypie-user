@@ -2,17 +2,15 @@
 #coding:utf8
 import warnings
 from django.conf import settings
-#from django.contrib.auth.models import User
-import User
 from django.contrib.auth import get_user_model
 from tastypie_user.utils import send_email, load_email_content
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import int_to_base36
 
-userclass = get_user_model()
+User = get_user_model()
 print "models says User is %s" % User
 
-class MyUser(userclass):
+class MyUser(User):
     def send_email(self, action_type, ctx_dict=None, from_email=None):
         ctx_dict = ctx_dict or {}
         ctx_dict.update({
