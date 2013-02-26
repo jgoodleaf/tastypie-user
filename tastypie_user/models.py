@@ -3,6 +3,7 @@
 import warnings
 from django.conf import settings
 #from django.contrib.auth.models import User
+from tastypie_user import User
 from django.contrib.auth import get_user_model
 from tastypie_user.utils import send_email, load_email_content
 from django.contrib.auth.tokens import default_token_generator
